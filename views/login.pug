@@ -1,0 +1,43 @@
+html
+	head
+		title User Registration
+		script(src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+		script(src= 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		style('text/css').
+			input{
+				margin: 5px;
+				min-width:40%;
+				border-radius: 5px;
+				}
+			label{
+				min-width: 10%;
+			}
+			.class-fluid{
+				margin:2%;
+			}
+			body{
+				background-repeat: no-repeat;
+				background-size: 100% 93%;
+				background-image: url("https://d27yqot8savz5t.cloudfront.net/screengrabs/images/000/003/802/medium.jpg");
+			}
+			.row{
+				margin-left: 90%;
+			}
+	body
+		div.class-fluid
+			div.row
+				form(action='/registration' method='get')
+					button(type='submit') Sign Up
+			div 
+				h3.text-warning #{Message}
+			div.col-md-offset-2.col-md-8
+				form(action='/mainBlog' method='post')
+					div
+						label Email: 
+						input( name='email' placeHolder='Enter your Mail' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")
+					div
+						label Password: 
+						input( type='password' name='password' placeHolder='Enter your Password' pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters")
+					div
+						button(type='submit') Login

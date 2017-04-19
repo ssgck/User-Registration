@@ -1,0 +1,35 @@
+html
+	head
+		title Home Page
+		script(src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+		script(src= 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		style('text/css').
+			.class-fluid{
+				background-color: lightgrey;
+			}
+			.col-md-6{
+				margin: 5%;
+			}
+			button{
+				background-color: lightBlue;
+				width: 100px;
+				float: left;
+				margin: 5%
+				
+
+
+			}
+			body{
+				background-repeat: no-repeat;
+				background-size: 100% 93%;
+				background-image: url("https://d27yqot8savz5t.cloudfront.net/screengrabs/images/000/003/802/medium.jpg");
+			}
+	body
+		div.class-fluid
+			div.col-md-offset-2.col-md-6
+				form(action='/registration' method='get')
+					button(type='submit') Sign Up
+				form(action='/login' method='get')
+					button(type='submit') Login
+

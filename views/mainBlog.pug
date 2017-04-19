@@ -1,0 +1,70 @@
+html
+	head
+		title Home Page
+		script(src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+		script(src= 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		style('text/css').
+			.container-fluid{
+				background-size: 100% 93%;
+				background-color: lightgrey;
+			}
+			input,p,select{
+				width:80%;
+				margin: 3%;
+
+			}
+			.col-md-3, .col-md-7{
+				margin: 2%;
+				height: 80%;
+				border: solid 1px;
+				background-color: white;
+
+			}
+			#logout{
+				margin-left: 90%;
+				margin-top: -3%;
+			}
+			table{
+				content: center;
+				margin:3%;
+				
+			}
+			tr{
+				color: green;
+				width: 15%;
+				margin: 2%;
+			}
+			td{
+				width: 5%;
+			}
+		
+	body(ng-app='myApp' ng-controller='myController')
+		div.container-fluid
+			div.row
+				h3 Hello #{name}
+				form( id='logout' action='/logout' method='get')
+					button(type='submit') Log Out
+			div.col-md-offset-1.col-md-3
+				h3 Add your today task
+				form
+					input(name='task' placeholder='Enter name of the task' type='text' ng-model='task') 
+					select(name='priority' ng-model="priority" ng-options="x for x in priorities" ) 
+					button(type='submit' ng-click='addTask()') Add Task
+				
+
+			div.col-md-7
+				h3 My Today's tasks are:
+				table
+					thead
+						tr
+							th Task Name
+							th prority
+					tbody
+						tr(ng-repeat='x in task')
+							td x.task
+							td x.priority
+			
+		script(src='js/lib/angular/angular.js')
+		script(src='js/app.js')

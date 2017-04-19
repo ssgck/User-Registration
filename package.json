@@ -1,0 +1,16 @@
+{
+  "name": "user-registration",
+  "version": "1.0.0",
+  "description": "User registration, authentication and Dashboard model for users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chaitanya and Charan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "gentelella": "^1.3.0",
+    "pug": "^2.0.0-beta11"
+  }
+}
